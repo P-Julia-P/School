@@ -28,7 +28,6 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return String.format("%s, %s", getLastName(), getFirstName());
+		return String.format("Person: %s %s", getLastName(), getFirstName());
 	}
-	
 }
