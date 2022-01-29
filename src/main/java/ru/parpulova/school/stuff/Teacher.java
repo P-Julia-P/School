@@ -1,6 +1,9 @@
 package ru.parpulova.school.stuff;
 
 public class Teacher extends Person{
+	
+	public static final String EMAIL_REGEX = "((\\w+\\.\\w+)|\\w+)@((\\w+\\.\\w+)|\\w+)+"; 
+	
 	private String mail;
 	
 	public Teacher (String firstName, String lastName, String mail) {
@@ -9,7 +12,10 @@ public class Teacher extends Person{
 	}
 	
 	public void setMail(String mail) {
-		this.mail = mail;
+		if (mail.matches(EMAIL_REGEX))
+			this.mail = mail;
+		else
+			throw new RuntimeException("Неверный e-mail.");
 	}
 	
 	public String getMail() {
