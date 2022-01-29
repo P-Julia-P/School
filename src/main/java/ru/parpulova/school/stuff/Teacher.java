@@ -15,7 +15,7 @@ public class Teacher extends Person{
 		if (mail.matches(EMAIL_REGEX))
 			this.mail = mail;
 		else
-			throw new RuntimeException("Неверный e-mail.");
+			throw new RuntimeException("РќРµРІРµСЂРЅС‹Р№ e-mail.");
 	}
 	
 	public String getMail() {
@@ -24,6 +24,6 @@ public class Teacher extends Person{
 	
 	@Override
 	public String toString() {
-		return String.format("Teacher: %s, e-mail: %s ", super.toString(), getMail());
+		return String.format("Teacher: %s, e-mail: %s", super.toString(), getMail());
 	}
 }

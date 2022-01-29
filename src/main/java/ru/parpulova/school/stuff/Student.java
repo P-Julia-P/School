@@ -12,7 +12,7 @@ public class Student extends Person{
 		if(course >= 1 && course <= 5)
 			this.course = course;
 		else 
-			throw new RuntimeException("Íåïğàâèëüíûé êóğñ");
+			throw new RuntimeException("ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ ĞºÑƒÑ€Ñ");
 	}
 	
 	public int getCourse() {
@@ -21,6 +21,6 @@ public class Student extends Person{
 	
 	@Override
 	public String toString() {		
-		return String.format("Student: %s, course: %d ", super.toString(), getCourse());
+		return String.format("Student: %s, course: %d", super.toString(), getCourse());
 	}
 }
