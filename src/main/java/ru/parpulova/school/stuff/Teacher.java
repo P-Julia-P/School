@@ -1,10 +1,16 @@
 package ru.parpulova.school.stuff;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ru.parpulova.school.subjects.Subject;
+
 public class Teacher extends Person{
 	
 	public static final String EMAIL_REGEX = "((\\w+\\.\\w+)|\\w+)@((\\w+\\.\\w+)|\\w+)+"; 
 	
 	private String mail;
+	private List<Subject> subjects = new ArrayList<Subject>();
 	
 	public Teacher (String firstName, String lastName, String mail) {
 		super(firstName,lastName);
@@ -20,6 +26,10 @@ public class Teacher extends Person{
 	
 	public String getMail() {
 		return mail;
+	}
+	
+	public List<Subject> getSubjects(){
+		return subjects;
 	}
 	
 	@Override
