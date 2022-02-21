@@ -2,7 +2,7 @@ package ru.parpulova.school.stuff;
 
 public class Student extends Person{
 	private int course;
-
+	
 	public Student(String firstName, String lastName, int course) {
 		super(firstName, lastName);
 		setCourse(course);
