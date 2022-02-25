@@ -18,10 +18,11 @@ public class StudentGrade {
 			
 	}
 	
-	public void setStudent(Student student) {
+	protected void setStudent(Student student) {
 		if(student == null)
 			throw new IllegalArgumentException("Student is null in StudentGrade");
 		this.student = student;
+		this.student.getGrades().add(this);
 	}
 	
 	public Student getStudent() {

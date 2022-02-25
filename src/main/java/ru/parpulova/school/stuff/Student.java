@@ -1,8 +1,18 @@
 package ru.parpulova.school.stuff;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ru.parpulova.school.subjects.StudentGrade;
+
 public class Student extends Person{
 	private int course;
+	private List<StudentGrade> grades = new ArrayList<StudentGrade>();
 	
+	public List<StudentGrade> getGrades() {
+		return grades;
+	}
+
 	public Student(String firstName, String lastName, int course) {
 		super(firstName, lastName);
 		setCourse(course);

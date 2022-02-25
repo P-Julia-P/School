@@ -3,6 +3,7 @@ package ru.parpulova.school;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import ru.parpulova.school.stuff.Student;
@@ -13,9 +14,16 @@ import ru.parpulova.school.subjects.Subject;
 public class StudentGradeTest {
 	@Test
 	public void createStudentGrade() {
+		Student s = new Student("A", "B", 3);
+				
 		new StudentGrade(
-				new Student("A", "B", 3), 
+				s, 
 				new Subject("C", 10, 3), Grade.D);
+		new StudentGrade(
+				s, 
+				new Subject("D", 10, 3), Grade.F);
+		
+		Assertions.assertEquals(2, s.getGrades().size());
 	}
 	
 	@Test
