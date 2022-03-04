@@ -79,7 +79,7 @@ public class Student extends Person{
 		
 		@Override
 		public String toString() {
-			return getGrade().name();
+			return String.format("%s - %s", getSubject() ,getGrade().name());
 		}
 	}
 }

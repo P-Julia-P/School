@@ -5,10 +5,13 @@ package ru.parpulova.school.subjects;
 public class Subject {
 	public static final int DEFAULT_COURSE = 1;
 	
+	private int id;
+	
 	//  title, duration, course
 	private String title;
 	private int duration;
 	private int course;
+	
 	
 	public Subject(String title, int duration, int course) {
 		setTitle(title);
@@ -18,6 +21,14 @@ public class Subject {
 	
 	public Subject(String title, int duration) {
 		this(title, duration, DEFAULT_COURSE);
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public void setTitle(String title) {
