@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import ru.parpulova.school.stuff.Student;
 import ru.parpulova.school.subjects.Grade;
-import ru.parpulova.school.subjects.StudentGrade;
 import ru.parpulova.school.subjects.Subject;
 
 public class StudentGradeTest {
@@ -16,22 +15,17 @@ public class StudentGradeTest {
 	public void createStudentGrade() {
 		Student s = new Student("A", "B", 3);
 				
-		new StudentGrade(
-				s, 
-				new Subject("C", 10, 3), Grade.D);
-		new StudentGrade(
-				s, 
-				new Subject("D", 10, 3), Grade.F);
+		s.addMark(new Subject("C", 10, 3), Grade.D);
+		s.addMark(new Subject("D", 10, 3), Grade.F);
 		
-		Assertions.assertEquals(2, s.getGrades().size());
+		Assertions.assertEquals(2, s.getMarks().size());
 	}
 	
 	@Test
 	public void createStudentGradeInvalidCourse() {
 		RuntimeException thrown = assertThrows(
 				RuntimeException.class,
-				() -> new StudentGrade(
-						new Student("A", "B", 3), 
+				() -> new Student("A", "B", 3).addMark(
 						new Subject("C", 10, 4), 
 						Grade.D),
 				"Expected StudentGrade ctor to throw, but it didn't"
