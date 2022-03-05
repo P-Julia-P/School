@@ -22,7 +22,7 @@ public class App {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Person p1 = new Person("Julia", "Parpulova");
+		/*Person p1 = new Person("Julia", "Parpulova");
 		out.println(p1);
 		
 		
@@ -39,7 +39,7 @@ public class App {
 		p2.addMark(p3.getSubjects().get(0), Grade.C);
 		p2.addMark(p3.getSubjects().get(1), Grade.B);
 		
-		printMarks(p2);
+		printMarks(p2);*/
 		
 		
 		try (Repository db = new SQLiteRepository()) {
@@ -47,6 +47,15 @@ public class App {
 				out.printf("%-3d %-20s %-4d %-3d\n", s.getId(), s.getTitle(), s.getDuration(), s.getCourse());
 			}
 		} // db.close
+		
+		
+		try (Repository db = new SQLiteRepository()) {
+			Subject s = db.getSubject(2);
+//			out.println(s);
+			if(s != null) {
+				db.delete(s);
+			}
+		}
 		
 	}
 

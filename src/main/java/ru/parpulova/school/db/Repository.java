@@ -9,5 +9,11 @@ import ru.parpulova.school.subjects.Subject;
 public interface Repository extends Closeable {
 	
 	List<Subject> getSubjects();
+	Subject getSubject(int id);
+	
+	
+	// CRUD
+	void delete (Subject subject);
+	
 	
 }
