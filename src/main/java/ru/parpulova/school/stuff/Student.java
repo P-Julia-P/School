@@ -31,7 +31,7 @@ public class Student extends Person{
 	}
 	
 	public Mark addMark(Subject subject, Grade grade) {
-		Mark mark = new Mark(subject, grade);
+		Mark mark = new Mark(this, subject, grade);
 		this.getMarks().add(mark);
 		return mark;
 	}
@@ -41,45 +41,5 @@ public class Student extends Person{
 		return String.format("Student: %s, course: %d", super.toString(), getCourse());
 	}
 	
-	public class Mark {
-		private Subject subject;
-		private Grade grade;
-		
-		private Mark (Subject subject, Grade grade) {
-			
-			setSubject(subject);
-			setGrade(grade);
-			
-			if(getStudent().getCourse() != getSubject().getCourse())
-				throw new IllegalArgumentException("Student course != Subject course");
-				
-		}
-		
-		public Student getStudent() {
-			return Student.this;
-		}
 
-		public Subject getSubject() {
-			return subject;
-		}
-
-		public void setSubject(Subject subject) {
-			if(subject == null) 
-				throw new IllegalArgumentException("Subject is null in StudentGrade");
-			this.subject = subject;
-		}
-
-		public Grade getGrade() {
-			return grade;
-		}
-
-		public void setGrade(Grade grade) {
-			this.grade = grade;
-		}
-		
-		@Override
-		public String toString() {
-			return String.format("%s - %s", getSubject() ,getGrade().name());
-		}
-	}
 }
