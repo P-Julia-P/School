@@ -43,7 +43,7 @@ CREATE TABLE teacher_subject (
 CREATE TABLE mark (
 	student_id integer NOT NULL,
 	subject_id integer NOT NULL,
-	grade char,
+	grade char NOT NULL,
 	CHECK (grade in ('A', 'B', 'C', 'D', 'E', 'F') ),
 	FOREIGN KEY ( student_id )
 		REFERENCES student (id ) ON DELETE CASCADE,
